@@ -1,0 +1,49 @@
+<footer>
+  <p>
+    <span>Copyright </span><span>@ 2024 Spike & Grace</span>
+    <span>-</span>
+    <span>All Rights Reserved.</span>
+  </p>
+</footer>
+
+<style>
+  footer {
+    margin-top: 7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 1rem;
+    background: linear-gradient(
+      90deg,
+      rgba(90, 139, 54, 0.6) 0%,
+      rgba(199, 223, 26, 0.6) 47.5%,
+      rgba(178, 195, 94, 0.6) 92%
+    );
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  @media (max-width: 768px) {
+    footer {
+      margin-top: 4rem;
+    }
+
+    p {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.6rem;
+
+      span:nth-child(3) {
+        display: none;
+      }
+
+      span {
+        text-align: center;
+        font-size: 14px;
+      }
+    }
+  }
+</style>

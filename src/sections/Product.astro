@@ -1,0 +1,103 @@
+---
+import { Image } from 'astro:assets'
+import cactiInPots from '../images/productImage1.jpg'
+import cactusInCamera from '../images/productImage2.jpg'
+import twoCactiInPots from '../images/productImage3.jpg'
+---
+
+<section id="product">
+  <div class="textContainer">
+    <h3>Handpicked Wonders</h3>
+    <h2>Curated Cacti Collection</h2>
+    <p>
+      Explore our curated collection, where each cactus, from the majestic
+      Saguaro to the gentle Bunny Ears, is chosen for its unique beauty and
+      simplicity.
+    </p>
+  </div>
+  <div class="gallery">
+    <div class="firstRow">
+      <Image src={cactiInPots} alt="Cacti in pots" />
+    </div>
+    <div class="secondRow">
+      <Image src={cactusInCamera} alt="Cactus in camera" />
+      <Image src={twoCactiInPots} alt="Two cacti in pots" />
+    </div>
+  </div>
+</section>
+
+<style>
+  section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .textContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    max-width: 40%;
+  }
+
+  .gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+
+  .firstRow img {
+    width: 100%;
+  }
+
+  .secondRow {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+
+    & > * {
+      flex: 1;
+    }
+  }
+
+  @media (max-width: 1140px) {
+    section {
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .textContainer {
+      max-width: 100%;
+      align-items: center;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    p {
+      text-align: center;
+    }
+
+    .gallery {
+      flex-direction: column;
+      gap: 1.6rem;
+    }
+
+    .secondRow {
+      gap: 1.6rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .secondRow {
+      flex-direction: column;
+      gap: 1.6rem;
+    }
+
+    .textContainer {
+      padding: 0 20px;
+    }
+  }
+</style>

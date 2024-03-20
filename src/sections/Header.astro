@@ -1,0 +1,55 @@
+---
+import { Image } from 'astro:assets'
+import logo from '../images/Spike&Grace.svg'
+
+const links = [
+  { href: '#mission', text: 'Mission' },
+  { href: '#product', text: 'Product' },
+  { href: '#contact', text: 'Contact' },
+]
+---
+
+<header>
+  <a href="/">
+    <Image src={logo} alt="A bird sitting on a nest of eggs." />
+  </a>
+  <ul class="nav">
+    {
+      links.map((link) => (
+        <li>
+          <a href={link.href}>{link.text}</a>
+        </li>
+      ))
+    }
+  </ul>
+  <style>
+    header {
+      padding-top: 2.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 1.6rem;
+    }
+
+    a {
+      font-size: 1.4rem;
+    }
+
+    img {
+      border-radius: 0;
+      width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 1.6rem;
+      }
+    }
+  </style>
+</header>
